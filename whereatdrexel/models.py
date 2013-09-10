@@ -1,4 +1,4 @@
-from whereatdrexel import db, bcrypt
+from whereatdrexel import db, bcrypt, app
 from collections import namedtuple
 import json
 
@@ -34,7 +34,17 @@ class Location(Model):
 		self.description = description
 
 	def __repr__(self):
-		return "<Location %r at %f x %f is of type %r>" % (self.name, self.longitude, self.latitude, self.type)
+		return '<Location %r at %f x %f is of type %r>' % (self.name, self.longitude, self.latitude, self.type)
+	
+	def data(self):
+		location_dict = dict()
+		location_dict['name'] = self.name
+		location_dict['short_name'] = self.short_name
+		location_dict['description'] = self.description
+		location_dict['longitude'] = self.longitude
+		location_dict['latitude'] = self.latitude
+		location_dict['type'] = self.type
+		return location_dict
 
 class BuildingLocation(Location):
 	__mapper_args__ = {'polymorphic_identity':location_type.building}
@@ -60,3 +70,4 @@ class User(Model):
 
 	def __repr__(self):
 		return '<User %r>' % (self.username)
+
