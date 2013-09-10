@@ -9,6 +9,9 @@ from sqlalchemy.sql import text
 def load_user(userid):
 	return User.query.get(userid)
 
+
+## Helper for API
+
 def get_all_locations(locationType):
 	locations_list = list()
 	locations = locationType.query.all()
