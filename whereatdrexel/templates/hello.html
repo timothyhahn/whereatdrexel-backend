@@ -1,0 +1,49 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Hello Admin!</title>
+	
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/normalize.css')}}" />
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/foundation.min.css')}}" />
+	<script src="{{ url_for('static', filename='js/vendor/custom.modernizr.js')}}"></script>
+</head>
+
+<body>
+
+<nav class="top-bar">
+    <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#"> Where at Drexel? Admin Panel</a></h1>
+    </li>
+    <!-- For Mobile -->
+    <li class="toggle-topbar menu-icon"><a href="#" onClick="hideBack()"><span>Menu</span></a></li>
+  </ul>
+
+  <!-- Right side of top bar -->
+  <section class="top-bar-section">
+    <ul class="right">
+        <li class="has-dropdown">
+            <a href="#user" id="userName">User</a>
+            <ul class="dropdown">
+              <li ><label>User Actions</label></li>
+              <li><a href="#" >Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+    </section>
+</nav> <!-- End TopBar -->
+
+<div class="row">
+	<div class="large-12 columns">Hello, Admin</div>
+</div>
+
+<script src="{{ url_for('static', filename='js/vendor/jquery.js')}}"></script>
+<script src="{{ url_for('static', filename='js/vendor/foundation.min.js')}}"></script>
+<script>
+    $(document).foundation();
+</script>
+
+</body>
