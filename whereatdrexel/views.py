@@ -1,6 +1,6 @@
 from whereatdrexel import app, login_manager, db
 from models import Location, BuildingLocation, TruckLocation, FacultyLocation, AlertLocation, User, location_type
-from flask import url_for, redirect, request, render_template, jsonify
+from flask import url_for, redirect, request, render_template, jsonify, json, g, Flask
 from flask.ext.login import login_required, login_user, current_user
 from sqlalchemy.sql import text
 
@@ -61,7 +61,33 @@ def search_locations(term, type):
 	return jsonify(locations_dict)
 
 ## ADMIN
-@app.route('/admin')
+from flask_wtf import Form
+from wtforms import TextField, HiddenField
+from wtforms.validators import Required
+
+class LocationForm(Form) :
+	id = HiddenField('id')
+	name = TextField('name')
+	longitude = TextField('longitude')
+	latitude = TextField('latitude')
+	type = TextField('type')
+@app.route('/admin', methods = ['GET','POST'])
 def admin_home():
-	print location_type._asdict().values()
-	return render_template('hello.html')
+	#print location_type._asdict().values()
+	locations = Location.query.all()
+	type_list = list()
+	form= LocationForm()
+	if form.validate_on_submit() :
+		ids = request.form.getlist('id')
+		ids.remove('')
+		name = request.form.getlist('name')
+		longitude = request.form.getlist('longitude')
+		latitude = request.form.getlist('latitude')
+		type = request.form.getlist('types')
+#		db.engine.execute("INSERT INTO location (name, longitude, latitude) VALUES(")
+		print ids
+
+	for type in location_type._asdict().values():
+		type_list.append(type.capitalize())
+	return render_template('hello.html', locations=locations, location_types=type_list, form=form)
+
