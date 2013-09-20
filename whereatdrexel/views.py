@@ -1,8 +1,13 @@
 from whereatdrexel import app, login_manager, db
 from models import Location, BuildingLocation, TruckLocation, FacultyLocation, AlertLocation, User, location_type
-from flask import url_for, redirect, request, render_template, jsonify
+from flask import url_for, redirect, request, render_template, jsonify, json, g, Flask
 from flask.ext.login import login_required, login_user, current_user
 from sqlalchemy.sql import text
+from flask_wtf import Form
+from wtforms import TextField, FloatField, BooleanField, IntegerField
+from wtforms.validators import Required
+
+
 import re
 
 ## For logins
@@ -130,7 +135,48 @@ def search_locations(term, type):
     return jsonify(locations_dict)
 
 ## ADMIN
-@app.route('/admin')
+class LocationForm(Form) :
+    id = IntegerField('id')
+    name = TextField('name')
+    longitude = FloatField('longitude')
+    latitude = FloatField('latitude')
+    type = TextField('type')
+    delete = BooleanField('delete', default='n')
+
+@app.route('/admin', methods = ['GET','POST'])
 def admin_home():
-    print location_type._asdict().values()
-    return render_template('hello.html')
+    locform = LocationForm()
+    if locform.validate_on_submit() :
+        ids = request.form.getlist('id')
+        name = request.form.getlist('name')
+        longitude = request.form.getlist('longitude')
+        latitude = request.form.getlist('latitude')
+        type = request.form.getlist('types')        
+        for (i, id) in enumerate(ids) :
+            if id.isdigit() :
+                loc = Location.query.get(id)
+                loc.longitude = longitude[i]
+                loc.latitude = latitude[i]
+                loc.name = name[i]
+                loc.type = type[i].lower()
+                db.session.commit()
+            else :
+                if longitude[i] and latitude[i] and name[i] :
+                    loc = Location(float(longitude[i]), float(latitude[i]), name[i], 'N/A', 'N/A')
+                    loc.type = type[i].lower()
+                    db.session.add(loc)
+                    db.session.commit()
+    locations = Location.query.all()
+    type_list = list()
+    
+    for type in location_type._asdict().values():
+        type_list.append(type.capitalize())
+    return render_template('hello.html', locations=locations, location_types=type_list, form=locform)
+
+@app.route('/admin/delete/<id>')
+def delete(id) :
+    print 'here'
+    l = Location.query.get(id)
+    db.session.delete(l)
+    db.session.commit()
+    return redirect(url_for('/admin'))
