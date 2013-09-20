@@ -62,32 +62,49 @@ def search_locations(term, type):
 
 ## ADMIN
 from flask_wtf import Form
-from wtforms import TextField, HiddenField
+from wtforms import TextField, FloatField, BooleanField, IntegerField
 from wtforms.validators import Required
 
 class LocationForm(Form) :
-	id = HiddenField('id')
+	id = IntegerField('id')
 	name = TextField('name')
-	longitude = TextField('longitude')
-	latitude = TextField('latitude')
+	longitude = FloatField('longitude')
+	latitude = FloatField('latitude')
 	type = TextField('type')
+	delete = BooleanField('delete', default='n')
+
 @app.route('/admin', methods = ['GET','POST'])
 def admin_home():
 	#print location_type._asdict().values()
-	locations = Location.query.all()
-	type_list = list()
-	form= LocationForm()
-	if form.validate_on_submit() :
+	locform= LocationForm()
+	if locform.validate_on_submit() :
 		ids = request.form.getlist('id')
-		ids.remove('')
 		name = request.form.getlist('name')
 		longitude = request.form.getlist('longitude')
 		latitude = request.form.getlist('latitude')
-		type = request.form.getlist('types')
-#		db.engine.execute("INSERT INTO location (name, longitude, latitude) VALUES(")
-		print ids
-
+		type = request.form.getlist('types')		
+		for (i, id) in enumerate(ids) :
+			if id.isdigit() :
+				loc = Location.query.get(id)
+				loc.longitude = longitude[i]
+				loc.latitude = latitude[i]
+				loc.name = name[i]
+				loc.type = type[i].lower()
+				db.session.commit()
+			else :
+				if longitude[i] and latitude[i] and name[i] :
+					loc = Location(float(longitude[i]), float(latitude[i]), name[i], 'N/A', 'N/A')
+					loc.type = type[i].lower()
+					db.session.add(loc)
+					db.session.commit()
+	locations = Location.query.all()
+	type_list = list()
+	
 	for type in location_type._asdict().values():
 		type_list.append(type.capitalize())
-	return render_template('hello.html', locations=locations, location_types=type_list, form=form)
+	return render_template('hello.html', locations=locations, location_types=type_list, form=locform)
 
+@app.route('/admin/delete/<id>')
+def delete(id) :
+	print 'here'
+	return redirect(url_for('/admin'))
