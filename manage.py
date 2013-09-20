@@ -4,7 +4,7 @@ from whereatdrexel import app
 
 import whereatdrexel.settings as settings
 
-app.debug = settings.debug
+app.debug = True
 app.config['SECRET_KEY'] = settings.secret_key
 
 manager = Manager(app)
@@ -24,6 +24,17 @@ def clear_db():
     print "Clearing DB"
     from whereatdrexel.database import clear_db
     clear_db()
+
+@manager.command
+def load_buildings():
+    "Loads locations of buildings"
+    from whereatdrexel.helpers import load_buildings
+    load_buildings()
+
+@manager.command
+def clear_buildings():
+    from whereatdrexel.database import clear_buildings
+    clear_buildings()
 
 @manager.command
 def migrate(message):

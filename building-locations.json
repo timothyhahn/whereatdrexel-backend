@@ -1,0 +1,436 @@
+{
+  "locations": [
+    {
+      "description": "Classrooms, faculty offices, and lab spaces, attached to Drexel's Main Building.",
+      "latitude": 39.953910, 
+      "longitude": -75.185870, 
+      "name": "Alumni Engineering Labs", 
+      "short_name": "AEL", 
+      "type": "building"
+    }, 
+    {
+      "description": "Houses multipurpose courts (tennis, basketball, volleyball, etc.) and the Drexel ROTC Armory.", 
+      "latitude": 39.956550, 
+      "longitude": -75.188745, 
+      "name": "Armory (Buckley Courts)", 
+      "short_name": "Armory", 
+      "type": "building"
+    }, 
+    {
+      "description": "Engineering and research central at Drexel. Includes 48 teaching laboratories, 37 lab support spaces, eight conference rooms, 77 offices, and a 300-seat auditorium.", 
+      "latitude": 39.955008, 
+      "longitude": -75.186439, 
+      "name": "Bossone Research Enterprise Center", 
+      "short_name": "Bossone", 
+      "type": "building"
+    }, 
+    {
+      "description": "Features two beach volleyball courts with lights for day and night play.", 
+      "latitude": 39.957285, 
+      "longitude": -75.189518, 
+      "name": "Buckley Green", 
+      "short_name": "Buckley Green", 
+      "type": "building"
+    }, 
+    {
+      "description": "Features a Sprinturf synthetic grass surface utilized for informal recreation, intramurals, and club sports.", 
+      "latitude": 39.957017, 
+      "longitude": -75.188482, 
+      "name": "Buckley Recreational Field", 
+      "short_name": "Recreational Field", 
+      "type": "building"
+    }, 
+    {
+      "description": "The tennis courts are lighted to accommodate the student schedules for evening matches.", 
+      "latitude": 39.957852, 
+      "longitude": -75.191358, 
+      "name": "Buckley Tennis Courts", 
+      "short_name": "Tennis Courts", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms, lecture halls, and labs", 
+      "latitude": 39.954470, 
+      "longitude": -75.185795, 
+      "name": "Center for Automation Technology", 
+      "short_name": "CAT", 
+      "type": "building"
+    }, 
+    {
+      "description": "Furnished student apartments and townhomes on Drexel's campus", 
+      "latitude": 39.953523, 
+      "longitude": -75.187857, 
+      "name": "Chestnut Square", 
+      "short_name": "Chestnut Square", 
+      "type": "building"
+    }, 
+    {
+      "description": "Lounges, meeting rooms, retail dining locations, a fully-equipped theater, and more. The Center also houses administrative and academic offices. <hr />Hours: http://drexel.edu/dbs/studentCenters/creeseCenter/hours/",
+      "latitude": 39.953499, 
+      "longitude": -75.188434, 
+      "name": "Creese Student Center", 
+      "short_name": "Creese", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms and lecture halls. Connected to the Center of Automation of Technology by bridge. Attached to Drexel's Main Building.", 
+      "latitude": 39.953946, 
+      "longitude": -75.186144, 
+      "name": "Curtis Hall", 
+      "short_name": "CURTIS", 
+      "type": "building"
+    }, 
+    {
+      "description": "Home of Drexel Athletics. The facility includes a swimming pool located on the lower level, five squash courts, a golf center, and a gymnasium featuring four courts for recreational, intramural, club volleyball, basketball and badminton.", 
+      "latitude": 39.956302, 
+      "longitude": -75.190746, 
+      "name": "Daskalakis Athletic Center", 
+      "short_name": "Daskalakis", 
+      "type": "building"
+    }, 
+    {
+      "description": "null", 
+      "latitude": 39.956040, 
+      "longitude": 39.956040, 
+      "name": "Design Arts Annex", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "null", 
+      "latitude": 39.954494, 
+      "longitude": -75.187723,
+      "name": "Disque Hall", 
+      "short_name": "DISQUE", 
+      "type": "building"
+    }, 
+    {
+      "description": "Large public green space located on 32nd Street and Powelton Avenue, near Drexel University's campus.", 
+      "latitude": 39.961112, 
+      "longitude": -75.187536, 
+      "name": "Drexel Park", 
+      "short_name": "Park", 
+      "type": "building"
+    }, 
+    {
+      "description": "Houses the Drexel University Police Department.", 
+      "latitude": 39.958286, 
+      "longitude": -75.188576, 
+      "name": "Drexel Police Station", 
+      "short_name": "Police", 
+      "type": "building"
+    }, 
+    {
+      "description": "Recreation Center for students, faculty, staff and the community, promoting health and wellness, memberships, climbing wall, and aquatics. <hr />Hours: http://www.drexel.edu/reccenter/facility_hours.html", 
+      "latitude": 39.956092, 
+      "longitude": -75.190113, 
+      "name": "Drexel Recreation Center", 
+      "short_name": "Rec Center", 
+      "type": "building"
+    }, 
+    {
+      "description": "Parcels shipped to Drexel go here.", 
+      "latitude": 39.955307, 
+      "longitude": -75.190816, 
+      "name": "General Services Building", 
+      "short_name": "General Services", 
+      "type": "building"
+    }, 
+    {
+      "description": "Student access library. <hr />Hours: http://www.library.drexel.edu/hours/today", 
+      "latitude": 39.955224, 
+      "longitude": -75.189931, 
+      "name": "Hagerty Library", 
+      "short_name": "Hagerty", 
+      "type": "building"
+    }, 
+    {
+      "description": "Student cafeteria. <hr />Hours: http://www.drexelcampusdining.com/handschumacher.html", 
+      "latitude": 39.953629, 
+      "longitude": -75.188885, 
+      "name": "Handschumacher Dining Center", 
+      "short_name": "Handschumacher", 
+      "type": "building"
+    }, 
+    {
+      "description": "Hosts large-scale geotechnical experimental facilities, including a shaking table, multiaxial tension test device, and a pilot-scale facility for large geotechnical engineering experiments.", 
+      "latitude": 39.956939, 
+      "longitude": -75.191803, 
+      "name": "Hess Engineering Research Laboratories", 
+      "short_name": "Hess", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms. Houses Drexel IRT, Mathematics, Education.", 
+      "latitude": 39.954789, 
+      "longitude": -75.188788, 
+      "name": "Korman Center", 
+      "short_name": "KORMAN", 
+      "type": "building"
+    }, 
+    {
+      "description": "Language and Communication Center", 
+      "latitude": 39.959641, 
+      "longitude": -75.189083, 
+      "name": "Language and Communication Center", 
+      "short_name": "LCC", 
+      "type": "building"
+    }, 
+    {
+      "description": "Law school at Drexel.", 
+      "latitude": 39.955392, 
+      "longitude": -75.190524, 
+      "name": "Earle Mack School of Law", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Engineering classrooms.", 
+      "latitude": 39.954891, 
+      "longitude": -75.185924, 
+      "name": "LeBow Engineering Center", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Business classrooms.", 
+      "latitude": 39.955124, 
+      "longitude": -75.188158, 
+      "name": "LeBow Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Study location near the dorms. <hr />Hours: https://www.library.drexel.edu/hours/today", 
+      "latitude": 39.958481, 
+      "longitude": -75.190022, 
+      "name": "Library Learning Terrace", 
+      "short_name": "Terrace", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms and faculty offices.", 
+      "latitude": 39.953506, 
+      "longitude": -75.189523, 
+      "name": "MacAlister Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "The primary performance venue for performances by the Theater, Music, and Dance programs", 
+      "latitude": 39.953386, 
+      "longitude": -75.188960, 
+      "name": "Mandell Theater", 
+      "short_name": "Mandell", 
+      "type": "building"
+    }, 
+    {
+      "description": "Provides a venue for events, speakers, workshops, exhibitions, and programs that foster cultural and religious respect and understanding among all groups.", 
+      "latitude": 39.954431, 
+      "longitude": -75.190081, 
+      "name": "Marks Intercultural Center", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Business classrooms.", 
+      "latitude": 39.955877, 
+      "longitude": -75.189216, 
+      "name": "Nesbitt Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Dining options include: Chick-fil-A, Subway, Currito. <hr />Hours: http://www.drexelcampusdining.com/Retail.html", 
+      "latitude": 39.958889, 
+      "longitude": -75.190518, 
+      "name": "Northside Dining Terrace", 
+      "short_name": "Northside", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms. Note: There are multiple entrances to One Drexel Plaza. Please refer to: http://www.drexel.edu/ims/One%20Drexel%20Plaza.htm", 
+      "latitude": 39.955237, 
+      "longitude": -75.183783, 
+      "name": "One Drexel Plaza", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Science Classroom", 
+      "latitude": 39.954328, 
+      "longitude": -75.189351, 
+      "name": "Papadakis Integrated Sciences Building", 
+      "short_name": "PISB", 
+      "type": "building"
+    }, 
+    {
+      "description": "Main Parking Lot. Also known as Parking Lot G", 
+      "latitude": 39.955382, 
+      "longitude": -75.191151, 
+      "name": "Parking Garage", 
+      "short_name": "Parking", 
+      "type": "building"
+    }, 
+    {
+      "description": "Business classrooms", 
+      "latitude": 39.955204, 
+      "longitude": -75.188756, 
+      "name": "Pearlstein Business Learning Center", 
+      "short_name": "PEARL", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms", 
+      "latitude": 39.957774, 
+      "longitude": -75.188965, 
+      "name": "Peck Problem Solving & Research Center", 
+      "short_name": "PSRC", 
+      "type": "building"
+    }, 
+    {
+      "description": "Provides functional spaces for formal receptions and meeting facilities.", 
+      "latitude": 39.954831, 
+      "longitude": -75.187002, 
+      "name": "Peck Alumni Center", 
+      "short_name": "Peck Center", 
+      "type": "building"
+    }, 
+    {
+      "description": "Psychology classrooms and faculty", 
+      "latitude": 39.960118, 
+      "longitude": -75.189051, 
+      "name": "PSA Building", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms. Connected to Drexel's Main Building.", 
+      "latitude": 39.954060, 
+      "longitude": -75.186420, 
+      "name": "Randell Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Undergraduate dorm.", 
+      "latitude": 39.958136, 
+      "longitude": -75.189824, 
+      "name": "Calhoun Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Upperclassmen dorm.", 
+      "latitude": 39.956992, 
+      "longitude": -75.187801, 
+      "name": "Caneris Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Undergraduate dorm.", 
+      "latitude": 39.959168, 
+      "longitude": -75.190526, 
+      "name": "Kelly Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Upperclassmen dorm.", 
+      "latitude": 39.959632, 
+      "longitude": -75.190719, 
+      "name": "Millennium Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Undergraduate dorm. Looks symmetrical when drunk.", 
+      "latitude": 39.959472, 
+      "longitude": -75.189727, 
+      "name": "Myers Hall", 
+      "short_name": "Myers", 
+      "type": "building"
+    }, 
+    {
+      "description": "Upperclassmen dorm", 
+      "latitude": 39.958387, 
+      "longitude": -75.188820, 
+      "name": "North Hall", 
+      "short_name": "North", 
+      "type": "building"
+    }, 
+    {
+      "description": "Undergraduate and honors dorm. Best dorm.", 
+      "latitude": 39.958440, 
+      "longitude": -75.189716, 
+      "name": "Race Street Hall", 
+      "short_name": "Race Street", 
+      "type": "building"
+    }, 
+    {
+      "description": "Undergraduatedorm.", 
+      "latitude": 39.958128, 
+      "longitude":-75.190789, 
+      "name": "Towers Hall", 
+      "short_name": "Towers", 
+      "type": "building"
+    }, 
+    {
+      "description": "Undergraduate Dorm.", 
+      "latitude": 39.960006, 
+      "longitude": -75.190440, 
+      "name": "Van Rensselaer Hall", 
+      "short_name": "Van R", 
+      "type": "building"
+    }, 
+    {
+      "description": "Dining, lounging, and studying space. <hr />Hours: http://drexel.edu/dbs/studentCenters/rossCommons/hours/", 
+      "latitude": 39.959860, 
+      "longitude": -75.190651, 
+      "name": "Ross Commons", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Career development professionals.", 
+      "latitude": 39.957840, 
+      "longitude": -75.188043, 
+      "name": "Steinbright Career Development Center", 
+      "short_name": "SCDC", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms.", 
+      "latitude": 39.954067, 
+      "longitude": -75.187941, 
+      "name": "Stratton Hall", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Student living and classrooms.", 
+      "latitude": 39.956126, 
+      "longitude": -75.187946, 
+      "name": "University Crossings", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms.", 
+      "latitude": 39.956483, 
+      "longitude": -75.193048, 
+      "name": "URBN Center", 
+      "short_name": "null", 
+      "type": "building"
+    }, 
+    {
+      "description": "Classrooms.", 
+      "latitude": 39.957042, 
+      "longitude": -75.192908, 
+      "name": "URBN Center Annex", 
+      "short_name": "null", 
+      "type": "building"
+    }
+    ]
+}
