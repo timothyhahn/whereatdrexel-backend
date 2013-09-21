@@ -37,6 +37,12 @@ def clear_buildings():
     clear_buildings()
 
 @manager.command
+def load_courses():
+    "Loads courses"
+    from whereatdrexel.helpers import load_courses
+    load_courses()
+
+@manager.command
 def migrate(message):
 	"Migrate, needs a commit message"
 	if not message:

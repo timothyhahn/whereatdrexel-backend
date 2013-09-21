@@ -21,7 +21,7 @@
       "latitude": 39.955008, 
       "longitude": -75.186439, 
       "name": "Bossone Research Enterprise Center", 
-      "short_name": "Bossone", 
+      "short_name": "BSONE", 
       "type": "building"
     }, 
     {
@@ -89,15 +89,15 @@
       "type": "building"
     }, 
     {
-      "description": "null", 
-      "latitude": 39.956040, 
-      "longitude": 39.956040, 
+      "description": "College of Design's Annex", 
+      "latitude": 39.956046, 
+      "longitude": -75.188920, 
       "name": "Design Arts Annex", 
-      "short_name": "null", 
+      "short_name": "CODANX", 
       "type": "building"
     }, 
     {
-      "description": "null", 
+      "description": "Classrooms", 
       "latitude": 39.954494, 
       "longitude": -75.187723,
       "name": "Disque Hall", 
@@ -114,8 +114,8 @@
     }, 
     {
       "description": "Houses the Drexel University Police Department.", 
-      "latitude": 39.958286, 
-      "longitude": -75.188576, 
+      "latitude": 39.957551, 
+      "longitude": -75.188423, 
       "name": "Drexel Police Station", 
       "short_name": "Police", 
       "type": "building"
@@ -125,7 +125,7 @@
       "latitude": 39.956092, 
       "longitude": -75.190113, 
       "name": "Drexel Recreation Center", 
-      "short_name": "Rec Center", 
+      "short_name": "DRC", 
       "type": "building"
     }, 
     {
@@ -141,7 +141,7 @@
       "latitude": 39.955224, 
       "longitude": -75.189931, 
       "name": "Hagerty Library", 
-      "short_name": "Hagerty", 
+      "short_name": "HAGRTY", 
       "type": "building"
     }, 
     {
@@ -173,7 +173,7 @@
       "latitude": 39.959641, 
       "longitude": -75.189083, 
       "name": "Language and Communication Center", 
-      "short_name": "LCC", 
+      "short_name": "LANGCC", 
       "type": "building"
     }, 
     {
@@ -181,7 +181,7 @@
       "latitude": 39.955392, 
       "longitude": -75.190524, 
       "name": "Earle Mack School of Law", 
-      "short_name": "null", 
+      "short_name": "LAW", 
       "type": "building"
     }, 
     {
@@ -189,7 +189,7 @@
       "latitude": 39.954891, 
       "longitude": -75.185924, 
       "name": "LeBow Engineering Center", 
-      "short_name": "null", 
+      "short_name": "LEBOW", 
       "type": "building"
     }, 
     {
@@ -197,7 +197,7 @@
       "latitude": 39.955124, 
       "longitude": -75.188158, 
       "name": "LeBow Hall", 
-      "short_name": "null", 
+      "short_name": "GHALL", 
       "type": "building"
     }, 
     {
@@ -213,7 +213,7 @@
       "latitude": 39.953506, 
       "longitude": -75.189523, 
       "name": "MacAlister Hall", 
-      "short_name": "null", 
+      "short_name": "MACALS", 
       "type": "building"
     }, 
     {
@@ -221,15 +221,24 @@
       "latitude": 39.953386, 
       "longitude": -75.188960, 
       "name": "Mandell Theater", 
-      "short_name": "Mandell", 
+      "short_name": "MNDELL", 
       "type": "building"
     }, 
     {
+      "description": "Drexel's main academic and services building.", 
+      "latitude": 39.954081, 
+      "longitude": -75.186921, 
+      "name": "Main Building", 
+      "short_name": "MAIN", 
+      "type": "building"
+    }, 
+
+    {
       "description": "Provides a venue for events, speakers, workshops, exhibitions, and programs that foster cultural and religious respect and understanding among all groups.", 
       "latitude": 39.954431, 
-      "longitude": -75.190081, 
+      "longitude": -75.190080, 
       "name": "Marks Intercultural Center", 
-      "short_name": "null", 
+      "short_name": "INTCUL", 
       "type": "building"
     }, 
     {
@@ -237,7 +246,7 @@
       "latitude": 39.955877, 
       "longitude": -75.189216, 
       "name": "Nesbitt Hall", 
-      "short_name": "null", 
+      "short_name": "NSBITT", 
       "type": "building"
     }, 
     {
@@ -253,7 +262,7 @@
       "latitude": 39.955237, 
       "longitude": -75.183783, 
       "name": "One Drexel Plaza", 
-      "short_name": "null", 
+      "short_name": "DXLPLZ", 
       "type": "building"
     }, 
     {
@@ -275,7 +284,7 @@
     {
       "description": "Business classrooms", 
       "latitude": 39.955204, 
-      "longitude": -75.188756, 
+      "longitude": -75.188755, 
       "name": "Pearlstein Business Learning Center", 
       "short_name": "PEARL", 
       "type": "building"
@@ -301,15 +310,24 @@
       "latitude": 39.960118, 
       "longitude": -75.189051, 
       "name": "PSA Building", 
-      "short_name": "null", 
+      "short_name": "PSA", 
       "type": "building"
     }, 
+    {
+      "description": "Classrooms", 
+      "latitude": 39.956748, 
+      "longitude": -75.189571, 
+      "name": "Rush Building", 
+      "short_name": "RUSH", 
+      "type": "building"
+    }, 
+
     {
       "description": "Classrooms. Connected to Drexel's Main Building.", 
       "latitude": 39.954060, 
       "longitude": -75.186420, 
       "name": "Randell Hall", 
-      "short_name": "null", 
+      "short_name": "RANDEL", 
       "type": "building"
     }, 
     {
@@ -317,7 +335,7 @@
       "latitude": 39.958136, 
       "longitude": -75.189824, 
       "name": "Calhoun Hall", 
-      "short_name": "null", 
+      "short_name": "Calhoun", 
       "type": "building"
     }, 
     {
@@ -325,7 +343,7 @@
       "latitude": 39.956992, 
       "longitude": -75.187801, 
       "name": "Caneris Hall", 
-      "short_name": "null", 
+      "short_name": "Caneris", 
       "type": "building"
     }, 
     {
@@ -333,7 +351,7 @@
       "latitude": 39.959168, 
       "longitude": -75.190526, 
       "name": "Kelly Hall", 
-      "short_name": "null", 
+      "short_name": "Kelly", 
       "type": "building"
     }, 
     {
@@ -341,7 +359,7 @@
       "latitude": 39.959632, 
       "longitude": -75.190719, 
       "name": "Millennium Hall", 
-      "short_name": "null", 
+      "short_name": "Millenium", 
       "type": "building"
     }, 
     {
@@ -389,7 +407,7 @@
       "latitude": 39.959860, 
       "longitude": -75.190651, 
       "name": "Ross Commons", 
-      "short_name": "null", 
+      "short_name": "Ross", 
       "type": "building"
     }, 
     {
@@ -405,15 +423,15 @@
       "latitude": 39.954067, 
       "longitude": -75.187941, 
       "name": "Stratton Hall", 
-      "short_name": "null", 
+      "short_name": "STRATN", 
       "type": "building"
     }, 
     {
       "description": "Student living and classrooms.", 
-      "latitude": 39.956126, 
-      "longitude": -75.187946, 
+      "latitude": 39.956125, 
+      "longitude": -75.187945, 
       "name": "University Crossings", 
-      "short_name": "null", 
+      "short_name": "UCROSS", 
       "type": "building"
     }, 
     {
@@ -421,7 +439,7 @@
       "latitude": 39.956483, 
       "longitude": -75.193048, 
       "name": "URBN Center", 
-      "short_name": "null", 
+      "short_name": "URBN", 
       "type": "building"
     }, 
     {
@@ -429,7 +447,7 @@
       "latitude": 39.957042, 
       "longitude": -75.192908, 
       "name": "URBN Center Annex", 
-      "short_name": "null", 
+      "short_name": "URBN ANNEX", 
       "type": "building"
     }
     ]

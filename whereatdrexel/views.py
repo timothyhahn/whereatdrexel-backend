@@ -131,7 +131,7 @@ def search_locations(term, type):
         if location not in locations_list:
             locations_list.append(location)
 
-    locations_dict['locations'] = locations_list
+    locations_dict['locations'] = locations_list[:20]
     return jsonify(locations_dict)
 
 ## ADMIN
