@@ -4,9 +4,6 @@ from whereatdrexel import app
 
 import whereatdrexel.settings as settings
 
-app.debug = True
-app.config['SECRET_KEY'] = settings.secret_key
-
 manager = Manager(app)
 manager.add_command('runserver', Server())
 
@@ -16,7 +13,6 @@ def init_db():
     print "Setting up DB"
     from whereatdrexel.database import init_db
     init_db()
-
 
 @manager.command
 def clear_db():

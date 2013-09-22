@@ -1,5 +1,5 @@
-debug = True
+debug = False
 
 secret_key = 'secret'
 
-database_path = 'postgresql://localhost:5432/whereatdrexel'
+database_path = 'postgresql:///whereatdrexel'
