@@ -28,4 +28,6 @@ python manage.py load_courses
 python manage.py runserver
 ```
 
+## Changelog
 
+* v1.0.0: Initial release. Includes course and building functionality.
