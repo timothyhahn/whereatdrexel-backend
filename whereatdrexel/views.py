@@ -1,5 +1,5 @@
 from whereatdrexel import app, login_manager, db
-from models import Location, BuildingLocation, TruckLocation, FacultyLocation, AlertLocation, User, location_type
+from models import Location, BuildingLocation, CourseLocation, TruckLocation, FacultyLocation, AlertLocation, User, location_type
 from flask import url_for, redirect, request, render_template, jsonify, json, g, Flask
 from flask.ext.login import login_required, login_user, current_user
 from sqlalchemy.sql import text
@@ -84,6 +84,10 @@ def get_locations():
 @crossdomain(origin='*')
 def get_buildings():
     return jsonify(get_all_locations(BuildingLocation))
+
+@app.route('/api/courses')
+def get_courses():
+    return jsonify(get_all_locations(CourseLocation))
 
 @app.route('/api/trucks')
 def get_trucks():
