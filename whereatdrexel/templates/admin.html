@@ -1,0 +1,99 @@
+<!doctype html>
+
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Hello Admin!</title>
+	
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/normalize.css')}}" />
+	<link rel=stylesheet type=text/css href="{{ url_for('static', filename='css/foundation.min.css')}}" />
+	<script src="{{ url_for('static', filename='js/vendor/custom.modernizr.js')}}"></script>
+</head>
+
+<body>
+
+<nav class="top-bar">
+    <ul class="title-area">
+    <!-- Title Area -->
+    <li class="name">
+      <h1><a href="#"> Where at Drexel? Admin Panel</a></h1>
+    </li>
+    <!-- For Mobile -->
+    <li class="toggle-topbar menu-icon"><a href="#" onClick="hideBack()"><span>Menu</span></a></li>
+  </ul>
+
+  <!-- Right side of top bar -->
+  <section class="top-bar-section">
+    <ul class="right">
+        <li class="has-dropdown">
+        <a href="#user" id="userName">{{username}}</a>
+            <ul class="dropdown">
+              <li ><label>User Actions</label></li>
+              <li><a href="/logout" >Logout</a></li>
+            </ul>
+        </li>
+    </ul>
+    </section>
+</nav> <!-- End TopBar -->
+
+<div class="row">
+	<form action="" name="" method="post">
+	{{form.hidden_tag()}}
+	<div class="large-12 columns">Hello, Admin</div>
+	<table>
+		<thead>
+			<tr>
+				<td>Id </td>
+				<td>Name</td>
+				<td>Longitude</td>
+				<td>Latitude</td>
+				<td>Type</td>
+				<td>Delete?</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for location in locations %}
+			<tr>
+				<td>  {{form.id(value=location.id)}} </td>
+				<td> {{form.name(value=location.name)}}</td>
+				<td> {{form.longitude(value=location.longitude)}}</td>
+				<td> {{form.latitude(value=location.latitude)}}</td>
+				<td> 
+				<select name="types" id="customDropdown1" class="medium">
+					<option> {{location.type}} </option>
+					{% for type in location_types %}
+						<option > {{type}} </option>
+					{% endfor %}
+				</select>
+				</td>
+				<td><button href="/admin/delete/{{location.id}}"> Delete </button></td>
+			</tr>
+			{% endfor %}
+			<tr>
+				<td> {{form.id(value="N/A")}} </td>
+				<td> {{form.name(value="")}}</td>
+				<td> {{form.longitude(value="")}}</td>
+				<td> {{form.latitude(value="")}}</td>
+				<td> 
+				
+		        <select name="types" id="customDropdown1" class="medium">
+					{% for type in location_types %}
+						<option > {{type}} </option>
+					{% endfor %}
+				</select>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<p><input type="submit" value="Sign in"></p>
+	</form>
+	
+</div>
+
+<script src="{{ url_for('static', filename='js/vendor/jquery.js')}}"></script>
+<script src="{{ url_for('static', filename='js/vendor/foundation.min.js')}}"></script>
+<script>
+    $(document).foundation();
+</script>
+
+</body>
