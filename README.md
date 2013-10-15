@@ -30,4 +30,5 @@ python manage.py runserver
 
 ## Changelog
 
+* v1.0.1: Added exact_match flag for results
 * v1.0.0: Initial release. Includes course and building functionality.
