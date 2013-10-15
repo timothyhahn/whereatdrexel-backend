@@ -1,24 +1,29 @@
+## Dependencies from App
 from whereatdrexel import app, login_manager, db
-from models import Location, BuildingLocation, TruckLocation, FacultyLocation, AlertLocation, User, location_type
-from flask import url_for, redirect, request, render_template, jsonify, json, g, Flask
-from flask.ext.login import login_required, login_user, current_user
-from sqlalchemy.sql import text
-from flask_wtf import Form
-from wtforms import TextField, FloatField, BooleanField, IntegerField
+from models import Location, BuildingLocation, CourseLocation, TruckLocation, FacultyLocation, AlertLocation, User, location_type
+from forms import LocationForm, LoginForm
+
+## Flask Dependencies
+from flask import url_for, redirect, request, render_template, jsonify, json, g, Flask, make_response, request, current_app
+
+## Flask Extension Dependencies
 from wtforms.validators import Required
+from flask.ext.login import login_required, login_user, current_user
 
+## External Dependencies
 
+from functools import update_wrapper
+from sqlalchemy.sql import text
+from datetime import timedelta
 import re
 
+
 ## For logins
+login_manager.login_view = "login"
+
 @login_manager.user_loader
 def load_user(userid):
     return User.query.get(userid)
-
-
-from datetime import timedelta
-from flask import make_response, request, current_app
-from functools import update_wrapper
 
 ## Helper for crossdomain testing
 def crossdomain(origin=None, methods=None, headers=None,
@@ -85,6 +90,10 @@ def get_locations():
 def get_buildings():
     return jsonify(get_all_locations(BuildingLocation))
 
+@app.route('/api/courses')
+def get_courses():
+    return jsonify(get_all_locations(CourseLocation))
+
 @app.route('/api/trucks')
 def get_trucks():
     return jsonify(get_all_locations(TruckLocation))
@@ -122,28 +131,38 @@ def search_locations(term, type):
     for location in temp_list:
         if location['short_name']:
             if re.search(r'\b' + re.escape(term) + r'\b', location['short_name'].lower()):
+                location['exact_match'] = True
                 locations_list.append(location) 
             elif re.search(r'\b' + re.escape(term) + r'\b', location['name'].lower()):
+                location['exact_match'] = True
                 locations_list.append(location)
         
     ## Add the rest of the answers
     for location in temp_list:
         if location not in locations_list:
+            location['exact_match'] = False
             locations_list.append(location)
 
     locations_dict['locations'] = locations_list[:20]
     return jsonify(locations_dict)
 
 ## ADMIN
-class LocationForm(Form) :
-    id = IntegerField('id')
-    name = TextField('name')
-    longitude = FloatField('longitude')
-    latitude = FloatField('latitude')
-    type = TextField('type')
-    delete = BooleanField('delete', default='n')
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = LoginForm(request.form)
+    if form.validate_on_submit():
+        login_user(form.user)
+        return redirect(url_for('admin_home'))
+    return render_template('login.html', form=form)
+
+@app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_form('login'))
 
 @app.route('/admin', methods = ['GET','POST'])
+@login_required
 def admin_home():
     locform = LocationForm()
     if locform.validate_on_submit() :
@@ -171,9 +190,10 @@ def admin_home():
     
     for type in location_type._asdict().values():
         type_list.append(type.capitalize())
-    return render_template('hello.html', locations=locations, location_types=type_list, form=locform)
+    return render_template('admin.html', locations=locations, location_types=type_list, form=locform, username=current_user.username)
 
 @app.route('/admin/delete/<id>')
+@login_required
 def delete(id) :
     print 'here'
     l = Location.query.get(id)

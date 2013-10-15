@@ -4,6 +4,7 @@ from whereatdrexel import app
 
 import whereatdrexel.settings as settings
 
+
 manager = Manager(app)
 manager.add_command('runserver', Server())
 

@@ -1,4 +1,4 @@
-debug = False
+debug = True
 
 secret_key = 'secret'
 

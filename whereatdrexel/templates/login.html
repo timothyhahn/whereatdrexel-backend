@@ -37,54 +37,21 @@
 </nav> <!-- End TopBar -->
 
 <div class="row">
-	<form action="" name="" method="post">
+	<form action="/login" name="" method="post">
 	{{form.hidden_tag()}}
-	<div class="large-12 columns">Hello, Admin</div>
-	<table>
-		<thead>
-			<tr>
-				<td>Id </td>
-				<td>Name</td>
-				<td>Longitude</td>
-				<td>Latitude</td>
-				<td>Type</td>
-				<td>Delete?</td>
-			</tr>
-		</thead>
-		<tbody>
-			{% for location in locations %}
-			<tr>
-				<td>  {{form.id(value=location.id)}} </td>
-				<td> {{form.name(value=location.name)}}</td>
-				<td> {{form.longitude(value=location.longitude)}}</td>
-				<td> {{form.latitude(value=location.latitude)}}</td>
-				<td> 
-				<select name="types" id="customDropdown1" class="medium">
-					<option> {{location.type}} </option>
-					{% for type in location_types %}
-						<option > {{type}} </option>
-					{% endfor %}
-				</select>
-				</td>
-				<td><button href="/admin/delete/{{location.id}}"> Delete </button></td>
-			</tr>
-			{% endfor %}
-			<tr>
-				<td> {{form.id(value="N/A")}} </td>
-				<td> {{form.name(value="")}}</td>
-				<td> {{form.longitude(value="")}}</td>
-				<td> {{form.latitude(value="")}}</td>
-				<td> 
-				
-		        <select name="types" id="customDropdown1" class="medium">
-					{% for type in location_types %}
-						<option > {{type}} </option>
-					{% endfor %}
-				</select>
-				</td>
-			</tr>
-		</tbody>
-	</table>
+    {% for f in form if f.type != 'CSRFTokenField' %}
+    <div>
+        {{ f.label }}
+        {{ f }}
+        {% if f.errors %}
+            <ul>
+                {% for e in f.errors %}
+                <li>{{ e }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+    {% endfor %}
 	<p><input type="submit" value="Sign in"></p>
 	</form>
 	
