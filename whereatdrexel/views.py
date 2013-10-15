@@ -131,13 +131,16 @@ def search_locations(term, type):
     for location in temp_list:
         if location['short_name']:
             if re.search(r'\b' + re.escape(term) + r'\b', location['short_name'].lower()):
+                location['exact_match'] = True
                 locations_list.append(location) 
             elif re.search(r'\b' + re.escape(term) + r'\b', location['name'].lower()):
+                location['exact_match'] = True
                 locations_list.append(location)
         
     ## Add the rest of the answers
     for location in temp_list:
         if location not in locations_list:
+            location['exact_match'] = False
             locations_list.append(location)
 
     locations_dict['locations'] = locations_list[:20]
