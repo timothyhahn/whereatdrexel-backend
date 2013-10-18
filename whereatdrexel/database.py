@@ -16,8 +16,6 @@ def clear_buildings():
 def clear_courses():
     clear_model(CourseLocation)
 
-
 def clear_db():
 	db.drop_all()
-
 

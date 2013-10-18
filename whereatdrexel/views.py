@@ -4,10 +4,9 @@ from models import Location, BuildingLocation, CourseLocation, TruckLocation, Fa
 from forms import LocationForm, LoginForm
 
 ## Flask Dependencies
-from flask import url_for, redirect, request, render_template, jsonify, json, g, Flask, make_response, request, current_app
+from flask import url_for, redirect, render_template, jsonify, make_response, request, current_app
 
 ## Flask Extension Dependencies
-from wtforms.validators import Required
 from flask.ext.login import login_required, login_user, current_user
 
 ## External Dependencies

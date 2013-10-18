@@ -48,19 +48,19 @@ class Location(Model):
         return location_dict
 
 class CourseLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.course}
+    __mapper_args__ = {'polymorphic_identity': location_type.course}
 
 class BuildingLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.building}
+    __mapper_args__ = {'polymorphic_identity': location_type.building}
     
 class FacultyLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.faculty}
+    __mapper_args__ = {'polymorphic_identity': location_type.faculty}
 
 class TruckLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.truck}
+    __mapper_args__ = {'polymorphic_identity': location_type.truck}
 
 class AlertLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.alert}
+    __mapper_args__ = {'polymorphic_identity': location_type.alert}
 
 class User(Model):
     __tablename__ = 'user'
