@@ -2,9 +2,11 @@ import json
 import urllib2
 
 from models import BuildingLocation, CourseLocation
-from whereatdrexel import db
-from bs4 import BeautifulSoup
+from .app import create_app
+from .extensions import db
 
+app = create_app()
+from bs4 import BeautifulSoup
 
 def load_buildings():
     json_data = open('building-locations.json').read()
@@ -14,7 +16,6 @@ def load_buildings():
         bl = BuildingLocation(name=location['name'],description=location['description'],latitude=location['latitude'],longitude=location['longitude'],short_name=location['short_name'])
         db.session.add(bl)
     db.session.commit()
-
 
 def load_courses():
     courses_json_data=open('courses.json').read()
@@ -47,9 +48,7 @@ def load_courses():
     
         cl = CourseLocation(name=name, short_name=short_name, description=description, latitude=latitude, longitude=longitude)
         db.session.add(cl)
-    
     db.session.commit()
-
 
 def download_courses():
     courses_list = list()

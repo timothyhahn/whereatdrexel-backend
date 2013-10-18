@@ -1,5 +1,8 @@
-from whereatdrexel import db
-from whereatdrexel.models import Location, BuildingLocation, CourseLocation
+from whereatdrexel import create_app
+from .extensions import db
+from .api.models import Location, BuildingLocation, CourseLocation
+
+app = create_app()
 
 def init_db():
 	db.create_all()

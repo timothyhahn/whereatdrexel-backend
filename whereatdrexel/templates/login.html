@@ -37,7 +37,7 @@
 </nav> <!-- End TopBar -->
 
 <div class="row">
-	<form action="/login" name="" method="post">
+	<form action="/admin/login" name="" method="post">
 	{{form.hidden_tag()}}
     {% for f in form if f.type != 'CSRFTokenField' %}
     <div>
