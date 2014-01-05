@@ -1,6 +1,8 @@
+## Admin Dependencies
+from .models import User
+## Flask Dependencies
 from flask_wtf import Form
 from wtforms import TextField, FloatField, BooleanField, IntegerField, PasswordField, validators
-from models import User
 
 class LocationForm(Form):
     id = IntegerField('id')

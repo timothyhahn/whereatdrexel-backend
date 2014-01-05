@@ -1,12 +1,22 @@
 from flask.ext.script import Manager, Server
 
-from whereatdrexel import app
+from whereatdrexel import create_app
 
-import whereatdrexel.settings as settings
-
-
+app = create_app()
 manager = Manager(app)
+
 manager.add_command('runserver', Server())
+
+## Helpers
+
+def clear_model(model):
+    model.query.delete()
+
+## Commands
+
+@manager.command
+def run():
+    app.run()
 
 @manager.command
 def init_db():
@@ -30,14 +40,20 @@ def load_buildings():
 
 @manager.command
 def clear_buildings():
+    "Clear Buildings"
     from whereatdrexel.database import clear_buildings
-    clear_buildings()
+    clear_buildings
 
 @manager.command
 def load_courses():
     "Loads courses"
     from whereatdrexel.helpers import load_courses
     load_courses()
+
+def clear_courses():
+    "Clear Courses"
+    from whereatdrexel.database import clear_courses
+    clear_courses()
 
 @manager.command
 def download_courses():
@@ -59,5 +75,7 @@ def migrate(message):
 	result = subprocess.call(['alembic','upgrade','head'])
 	return result
 
+
 if __name__ == "__main__":
     manager.run()
+

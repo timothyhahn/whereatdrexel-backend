@@ -1,6 +1,8 @@
-from whereatdrexel import db, bcrypt, app
+## App Dependencies
+from ..extensions import db
+
+## External Dependencies
 from collections import namedtuple
-import json
 
 Column = db.Column
 Integer = db.Integer
@@ -48,44 +50,17 @@ class Location(Model):
         return location_dict
 
 class CourseLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.course}
+    __mapper_args__ = {'polymorphic_identity': location_type.course}
 
 class BuildingLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.building}
+    __mapper_args__ = {'polymorphic_identity': location_type.building}
     
 class FacultyLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.faculty}
+    __mapper_args__ = {'polymorphic_identity': location_type.faculty}
 
 class TruckLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.truck}
+    __mapper_args__ = {'polymorphic_identity': location_type.truck}
 
 class AlertLocation(Location):
-    __mapper_args__ = {'polymorphic_identity':location_type.alert}
-
-class User(Model):
-    __tablename__ = 'user'
-    id = Column(Integer, primary_key=True)
-    username = Column(String(80), nullable=False)
-    password = Column(String(60), nullable=False)
-
-    def __init__(self, username=None, password=None):
-        self.username = username
-        self.password = bcrypt.generate_password_hash(password) 
-
-    def __repr__(self):
-        return '<User %r>' % (self.username)
-    def is_authenticated(self):
-        return True
-
-    def is_active(self):
-        return True
-
-    def is_anonymous(self):
-        return False
-
-    def get_id(self):
-        return unicode(self.id)
-    
-    def is_valid(self, password=None):
-        return bcrypt.check_password_hash(self.password, password)
+    __mapper_args__ = {'polymorphic_identity': location_type.alert}
 
