@@ -40,6 +40,12 @@ def load_courses():
     load_courses()
 
 @manager.command
+def download_courses():
+    "Downloads courses"
+    from whereatdrexel.helpers import download_courses
+    download_courses()
+
+@manager.command
 def migrate(message):
 	"Migrate, needs a commit message"
 	if not message:

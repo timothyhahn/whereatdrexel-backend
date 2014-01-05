@@ -54,7 +54,10 @@ def load_courses():
 def download_courses():
     courses_list = list()
     
-    root_response = urllib2.urlopen("https://duapp2.drexel.edu/webtms_du/app?component=collSubj&page=CollegesSubjects&service=direct&sp=ZH4sIAAAAAAAAADWLTQ6CMBBGR4w%2Fa%2BNeLmChoiuXGldsjFxgpBNS0yK0g7LyRF7NO1hD%2FJbve%2B%2F9gYl3sCLVCeWoJyO0Y%2FGkK1svFDKKgpyFYaMIxjnMsORCW2JY5jd8YOJbk%2FyAZ7TNPoc5h%2BRwV8FYDIbBukou7HRd%2Ff8j%2BbKFF0R90zBMN6nM5C4EJzQmPnfoghTLbC23Xw08naqkAAAA&sp=0")
+    # wi2013
+    root_response = urllib2.urlopen("https://duapp2.drexel.edu/webtms_du/app?component=quarterTermDetails&page=Home&service=direct&sp=ZH4sIAAAAAAAAAFvzloG1uIhBPjWlVC%2BlKLUiNUcvs6hErzw1qSS3WC8lsSRRLyS1KJcBAhiZGJh9GNgTk0tCMnNTSxhEfLISyxL1iwtz9EECxSWJuQXWPgwcJUAtzvkpQBVCEBU5iXnp%2BsElRZl56TB5l9Ti5EKGOgamioKCEgY2IwNDYyNToJHhmXlAaYXA0sQiEG1orGtoAgDaZpl%2BpgAAAA%3D%3D")
+    # fa2013
+    #root_response = urllib2.urlopen("https://duapp2.drexel.edu/webtms_du/app?component=collSubj&page=CollegesSubjects&service=direct&sp=ZH4sIAAAAAAAAADWLTQ6CMBBGR4w%2Fa%2BNeLmChoiuXGldsjFxgpBNS0yK0g7LyRF7NO1hD%2FJbve%2B%2F9gYl3sCLVCeWoJyO0Y%2FGkK1svFDKKgpyFYaMIxjnMsORCW2JY5jd8YOJbk%2FyAZ7TNPoc5h%2BRwV8FYDIbBukou7HRd%2Ff8j%2BbKFF0R90zBMN6nM5C4EJzQmPnfoghTLbC23Xw08naqkAAAA&sp=0")
     root_html = root_response.read()
     
     root_soup = BeautifulSoup(root_html)
@@ -90,6 +93,12 @@ def download_courses():
                 course_dict["building"] = date_table.find_all("tr")[1].find_all("td")[4].get_text() 
                 course_dict["room"] = date_table.find_all("tr")[1].find_all("td")[5].get_text() 
                 print date_table.find_all("tr")[1].find_all("td")[4].get_text() + date_table.find_all("tr")[1].find_all("td")[5].get_text()
+
+                course_dict["time"] = date_table.find_all("tr")[1].find_all("td")[3].get_text() + " " + date_table.find_all("tr")[1].find_all("td")[2].get_text() 
+                print date_table.find_all("tr")[1].find_all("td")[3].get_text() + " " + date_table.find_all("tr")[1].find_all("td")[2].get_text() 
+
+
+
                 courses_list.append(course_dict)
     
     courses_dict = dict()
